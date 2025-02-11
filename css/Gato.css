@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Gato{
+    padding-top: auto;
+    margin: auto;
+    padding: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 300px;
+    width: 400px;
+    position: relative;
+    top: 25vh;
+
+}
+
+.Gatos {
+    border: 3px solid black;
+
+}
+
+.a{
+border-left: none;
+border-top: none;
+
+}
+
+.b{
+    border-top: none;
+
+}
+
+.c{
+    border-top: none;
+    border-right: none;
+}
+
+.d{
+    border-left: none;
+}
+
+.f{
+    border-right: none;
+}
+
+{}
