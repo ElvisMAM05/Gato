@@ -5,20 +5,26 @@
 }
 
 .Gato{
-    padding-top: auto;
     margin: auto;
     padding: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 300px;
-    width: 400px;
+    height: 410px;
+    width: 410px;
     position: relative;
-    top: 25vh;
-
+    top: 10vh;
+    background-color:ghostwhite;
 }
 
 .Gatos {
     border: 3px solid black;
+    overflow: hidden;
+    max-width:  137px;
+    max-height: 137px;
+    min-height: 137px;
+    min-width:  137px;
+    font-size: 40px;
+    text-align: center;
 
 }
 
@@ -30,20 +36,43 @@ border-top: none;
 
 .b{
     border-top: none;
+    overflow: hidden;
+    
 
 }
 
 .c{
     border-top: none;
     border-right: none;
+    overflow: hidden;
+
 }
 
 .d{
     border-left: none;
+    overflow: hidden;
+
 }
 
 .f{
     border-right: none;
-}
+    overflow: hidden;
 
-{}
+}
+.g{
+    border-bottom: none;
+    border-left: none;
+    overflow: hidden;
+
+}
+.h{
+    border-bottom: none;
+    overflow: hidden;
+
+}
+.i{
+    border-right: none;
+    border-bottom: none;
+    overflow: hidden;
+
+}
