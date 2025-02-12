@@ -1,19 +1,42 @@
-const espacio0=document.getElementById("espacio0")
-const espacio1=document.getElementById("espacio1")
-const espacio2=document.getElementById("espacio2")
-const espacio3=document.getElementById("espacio3")
-const espacio4=document.getElementById("espacio4")
-const espacio5=document.getElementById("espacio5")
-const espacio6=document.getElementById("espacio6")
-const espacio7=document.getElementById("espacio7")
-const espacio8=document.getElementById("espacio8")
+const gatos=document.getElementsByClassName("Gatos")
+const ganadorJuego = document.getElementById("ganador")
+let Jugador=true
+const maquina=""
 
+for(let i=0;i<gatos.length;i++){
+    gatos[i].addEventListener('click',Usuario1)
 
-espacio0.addEventListener("click",()=>{
+    }
 
+function Usuario1(e){
+    let gatosValue=e.target.innerHTML;
+    if( !gatosValue.length){
+        e.target.innerHTML=Jugador? 'X': 'O';
+        Jugador=!Jugador;   
 
+        checkline(0,1,2)
+        checkline(1,4,7)
+        checkline(6,4,2)
+        checkline(0,4,8)
+        checkline(3,4,5)
+        checkline(6,7,8)
+        checkline(0,3,6)
+        checkline(2,5,8)
 
+    }
 
-})
+}
+function checkline(c1,c2,c3){
+    if(gatos[c1].innerHTML.length &&
+        gatos[c1].innerHTML==gatos[c2].innerHTML &&
+            gatos[c2].innerHTML==gatos[c3].innerHTML ){
+                ganador()
+            }
+}
 
+function ganador(){
+    const mensaje = document.createElement("h1")
+    mensaje.innerHTML = "Ganaste"
+    ganadorJuego.appendChild(mensaje)
+}
 

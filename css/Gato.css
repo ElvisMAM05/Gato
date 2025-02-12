@@ -8,6 +8,7 @@
     margin: auto;
     padding: auto;
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(3, 1fr);
     height: 410px;
     width: 410px;
@@ -17,13 +18,15 @@
 }
 
 .Gatos {
+    display: grid;
+    place-items: center;
     border: 3px solid black;
     overflow: hidden;
     max-width:  137px;
     max-height: 137px;
     min-height: 137px;
     min-width:  137px;
-    font-size: 40px;
+    font-size: 80px;
     text-align: center;
     cursor: pointer;
     
@@ -33,6 +36,7 @@
 .a{
 border-left: none;
 border-top: none;
+
 
 }
 
