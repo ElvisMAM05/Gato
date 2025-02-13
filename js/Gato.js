@@ -1,7 +1,7 @@
 const gatos=document.getElementsByClassName("Gatos")
 const ganadorJuego = document.getElementById("ganador")
 let Jugador=true
-const maquina=""
+const maquina=false
 
 for(let i=0;i<gatos.length;i++){
     gatos[i].addEventListener('click',Usuario1)
