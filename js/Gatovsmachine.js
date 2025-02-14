@@ -16,7 +16,7 @@ function humanMove(){
     });
 }
 
-
+Resetear()
 humanMove()
 
 
@@ -32,12 +32,19 @@ function movimientoMaquina(){
     }
 
 }
- function Resetear(){
+function Resetear(){
     const buttonR= document.createElement("button")
     buttonR.textContent="Resetear"
+    buttonR.setAttribute("class", "Reset" )
     ContainerP.appendChild(buttonR)
+    buttonR.addEventListener("click",()=>{
+    
+window.location.reload()
 
- }
+    })
+}
+
+
 
 
 
