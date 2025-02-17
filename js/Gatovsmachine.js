@@ -6,6 +6,11 @@ let winX = localStorage.getItem("winX") ? parseInt(localStorage.getItem("winX"))
 let winO = localStorage.getItem("winO") ? parseInt(localStorage.getItem("winO")) : 0;
 let human=document.getElementById("Human")
 let machine=document.getElementById("Machine")
+let Turns=document.getElementById("Turns")
+let turnm=false
+let turnp=true
+let turnP= document.getElementById("turnP")
+let turnM= document.getElementById("turnM")
 
 
 human.textContent = `Player's Wins: ${winX}`;
@@ -14,7 +19,10 @@ machine.textContent = `Machine's Wins: ${winO}`
 function humanMove(){
     gatos.forEach((gato) => {
         gato.addEventListener("click",()=>{
-            if(gato.innerHTML == ""&& !gameOver){
+            if(gato.innerHTML == ""&& !gameOver && turnp==true){
+        turnM.remove()
+        turnP.textContent= "machine's turn"
+        Turns.appendChild(turnP)
                 gato.innerHTML = "X"
                 setTimeout(() => {
                     movimientoMaquina()
@@ -45,7 +53,10 @@ function movimientoMaquina(){
         return gato.innerHTML===""
     })
     
-    if(spaceO.length>0){
+    if(spaceO.length>0&& turnm==false){
+        turnP.remove()
+        turnM.textContent= "player's turn"
+        Turns.appendChild(turnM)
         const move= Math.floor(Math.random()*spaceO.length)
     spaceO[move].innerHTML="O"
                 checkline(0,1,2)
@@ -123,17 +134,19 @@ function checkline(c1, c2, c3){
             gatos[c1].innerHTML===gatos[c2].innerHTML&&
                 gatos[c2].innerHTML===gatos[c3].innerHTML)
                 {
-                    
                     Winners(c1,c2,c3)
+                    Turns.setAttribute("class","anim Turns ")
                 }
 }
 
-function markerP(){}
+function markerM(){
+
+}
 
 
 
+markerM()
 
-console,console.log(winX);
 
 
 

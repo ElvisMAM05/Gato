@@ -139,3 +139,72 @@ text-align: center;
     background-color:darkgrey;
     text-align: center;
 }
+
+.Turns{
+    border-radius: 1px;
+    border: 1px solid black;
+    background-color: aqua;
+    position: absolute;
+    width: 90px;
+    height: 50px;
+    left: 40px;
+    bottom: 50vh;
+    text-align: center;
+}
+
+.anim{
+    animation: movimientoLoco 1s infinite;
+}
+@keyframes movimientoLoco {
+    0%{
+        transform: rotate(20deg);
+
+    }
+    10%{
+        transform: rotate(60deg);
+
+    }
+    20%{
+        transform: rotate(-60deg);
+
+    }
+    30%{
+        transform: rotate(160deg);
+
+    }
+    40%{
+        transform: translateY(20px);
+        transform: rotate(120deg);
+
+    }
+    50%{
+        transform: rotate(10deg);
+
+    }
+    60%{
+        transform: rotate(100deg);
+
+    }
+    70%{
+        transform: rotate(180deg);
+
+    }
+    80%{
+        transform: rotate(90deg);
+
+    }
+    90%{
+        transform: rotate(10deg);
+
+    }
+    100%{
+        transform: rotate(529deg);
+
+    }
+    
+}
+body{
+    background-image: url(https://th.bing.com/th/id/OIP._3sIubhzulxl95lf4ua9GgHaE8?rs=1&pid=ImgDetMain);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
