@@ -12,14 +12,17 @@ let turnp=true
 let turnP= document.getElementById("turnP")
 let turnM= document.getElementById("turnM")
 let resetB=document.getElementById("reset")
-
+let movimientos = 0
+let hayGanador = false
 human.textContent = `Player's Wins: ${winX}`;
 machine.textContent = `Machine's Wins: ${winO}`
+let empate = true
 
 function humanMove(){
     gatos.forEach((gato) => {
         gato.addEventListener("click",()=>{
             if(gato.innerHTML == ""&& !gameOver && turnp==true){
+                movimientos++
         turnM.remove()
         turnP.textContent= "machine's turn"
         Turns.appendChild(turnP)
@@ -57,6 +60,7 @@ function movimientoMaquina(){
         Turns.appendChild(turnM)
         const move= Math.floor(Math.random()*spaceO.length)
             spaceO[move].innerHTML="O"
+            movimientos++
                 checkline(0,1,2)
                 checkline(1,4,7)
                 checkline(6,4,2)
@@ -114,15 +118,17 @@ function checkline(c1, c2, c3){
                         winX += 1;
                         localStorage.setItem("winX", winX); // Guardar el puntaje actualizado en localStorage
                         human.textContent= `Player's Wins: ${winX}`;
+                        hayGanador = true
                     }else{
                         if(gatos[c1].textContent==="O"){
                             winO+=1;
                             localStorage.setItem("winO", winO); // Guardar el puntaje actualizado en localStorage
                             machine.textContent = `Machine's Wins: ${winO}`
-
+                            hayGanador = true
                         }
                     }
                 }
+                draw()
 }
 
 function reset(){
@@ -132,3 +138,13 @@ function reset(){
 }
 
 reset()
+
+function draw(){
+    if (movimientos === 9 && !hayGanador && empate) {
+    let msg=document.createElement("p")
+    msg.textContent="your mom"
+    ContainerP.appendChild(msg)
+    empate = false
+
+    }
+}

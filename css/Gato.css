@@ -19,9 +19,11 @@
 }
 
 .Gatos {
+    
     display: grid;
     place-items: center;
-    border: 3px solid black;
+    border: 3px solid blue;
+    color:cyan;
     overflow: hidden;
     max-width:  140px;
     max-height: 140px;
