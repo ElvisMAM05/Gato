@@ -35,8 +35,10 @@ function checkline(c1,c2,c3){
 }
 
 function ganador(){
-    const mensaje = document.createElement("h1")
-    mensaje.innerHTML = "Ganaste"
-    ganadorJuego.appendChild(mensaje)
+    if( gatos[c1].textContent==="X"&&
+        gatos[c2].textContent==="X"&&
+        gatos[c3].textContent==="X"){
+            
+    }
 }
 
